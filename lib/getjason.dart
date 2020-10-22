@@ -1,14 +1,10 @@
-import 'package:flutter/material.dart';
+mport 'package:flutter/material.dart';
 //Townie Mobile App  v1.0  
 // allow bagel and bread order entry 2 days ahead only.
 // 10.21.20 - bill sanderson 
 
-//TODO Screen Layouts
+
 //TODO json pull and post 
-//TODO where to send post to email sms for store to see
-//TODO Update live db with fields add to test dp  retailp and mobileactive
-//TODO Create batch process to generate json file from db nightly or on demain via a button
-//TODO TEST code
 
 
 void main() {
