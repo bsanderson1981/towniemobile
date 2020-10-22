@@ -5,9 +5,36 @@
 //TODO Create batch process to generate json file from db nightly or on demain via a button
 //TODO TEST code
 
+
 import 'package:flutter/material.dart';
 import 'Services.dart';
 import 'Product.dart';
+
+
+void main() => runApp(MyApp());
+
+// #docregion MyApp
+class MyApp extends StatelessWidget {
+  // #docregion build
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Startup Name Generator',
+      theme: ThemeData(          // Add the 3 lines from here... 
+        primaryColor: Colors.red,
+      ),                         // ... to here.
+      home: JsonParseDemo(),
+    );
+  }
+  // #enddocregion build
+}
+
+
+
+
+
+
+
  
 class JsonParseDemo extends StatefulWidget {
   //
@@ -19,16 +46,16 @@ class JsonParseDemo extends StatefulWidget {
  
 class _JsonParseDemoState extends State<JsonParseDemo> {
   //
-  List<User> _users;
+  List<Product> _product;
   bool _loading;
  
   @override
   void initState() {
     super.initState();
     _loading = true;
-    Services.getUsers().then((users) {
+    Services.getUsers().then((product) {
       setState(() {
-        _users = users;
+        _product = product;
         _loading = false;
       });
     });
@@ -38,17 +65,17 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_loading ? 'Loading...' : 'Users'),
+        title: Text(_loading ? 'Loading...' : 'Products'),
       ),
       body: Container(
         color: Colors.white,
         child: ListView.builder(
-          itemCount: null == _users ? 0 : _users.length,
+          itemCount: null == _product ? 0 : _product.length,
           itemBuilder: (context, index) {
-            User user = _users[index];
+            Product product = _product[index];
             return ListTile(
-              title: Text(user.name),
-              subtitle: Text(user.email),
+              title: Text(product.pname),
+              subtitle: Text(product.retailp.toString()),
             );
           },
         ),
