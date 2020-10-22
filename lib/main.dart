@@ -75,7 +75,8 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
             Product product = _product[index];
             return ListTile(
               title: Text(product.pname),
-              subtitle: Text(product.retailp.toString()),
+              subtitle: Text(product.retailp.toStringAsFixed(2)),
+              
             );
           },
         ),
