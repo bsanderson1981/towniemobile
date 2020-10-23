@@ -4,6 +4,7 @@
 //TODO Update live db with fields add to test dp  retailp and mobileactive
 //TODO Create batch process to generate json file from db nightly or on demain via a button
 //TODO TEST code
+//TODO spining on load bagel icon or sprit - make.
 
 
 import 'package:flutter/material.dart';
@@ -60,7 +61,15 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
       });
     });
   }
- 
+ //TODO find day of week to only see items available on day:  
+ //DateTime date = DateTime.now();
+ //print("weekday is ${date.weekday}");
+//TODO Add quantiy field of 1 - 6 , default 0 ,to bagel and breads
+
+//TODO Bottom total of item and price.  Tax not included
+
+  
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
