@@ -95,7 +95,7 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
         child: ListView.separated(
 
             separatorBuilder: (context, index) => Divider(
-            color: Colors.black,
+            color: Colors.black, thickness: 2,
             ),
 
 
