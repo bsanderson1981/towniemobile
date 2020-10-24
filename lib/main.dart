@@ -99,11 +99,14 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
                       fontWeight: FontWeight.w400)),
 
               //TODO icon holder for adding quantiy selector for bagels 1-6 dropdown.dart  file called here
-              trailing: Icon(
+             /*  trailing: Icon(
                 Icons.online_prediction_rounded,
                 color: Colors.blue,
                 size: 36.0,
-              ),
+              ), */
+
+               trailing: MyDropStatefulWidget(),
+              
               
             );
           },

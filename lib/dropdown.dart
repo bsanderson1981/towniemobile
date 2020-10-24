@@ -9,10 +9,10 @@
 
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+//void main() => runApp(MyDropDown());
 
 /// This is the main application widget.
-class MyApp extends StatelessWidget {
+/* class MyDropDown extends StatelessWidget {
   static const String _title = 'Drop Down Select Code Sample';
 
   @override
@@ -27,18 +27,18 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
-}
+} */
 
 /// This is the stateful widget that the main application instantiates.
-class MyStatefulWidget extends StatefulWidget {
-  MyStatefulWidget({Key key}) : super(key: key);
+class MyDropStatefulWidget extends StatefulWidget {
+  MyDropStatefulWidget({Key key}) : super(key: key);
 
   @override
-  _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
+  _MyDropStatefulWidgetState createState() => _MyDropStatefulWidgetState();
 }
 
 /// This is the private State class that goes with MyStatefulWidget.
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+class _MyDropStatefulWidgetState extends State<MyDropStatefulWidget> {
   String dropdownValue = '6';
 
   @override
