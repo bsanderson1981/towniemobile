@@ -1,16 +1,15 @@
 //TODO Screen Layouts
-//TODO json pull and post 
+//TODO json pull and post
 //TODO where to send post to email sms for store to see
 //TODO Update live db with fields add to test dp  retailp and mobileactive
 //TODO Create batch process to generate json file from db nightly or on demain via a button
 //TODO TEST code
 //TODO spining on load bagel icon or sprit - make.
 
-
 import 'package:flutter/material.dart';
 import 'Services.dart';
 import 'Product.dart';
-
+import 'dropdown.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,43 +20,37 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Startup Name Generator',
-      theme: ThemeData(          // Add the 3 lines from here... 
-       primarySwatch: Colors.yellow,
+      theme: ThemeData(
+        // Add the 3 lines from here...
+        primarySwatch: Colors.yellow,
         textTheme: TextTheme(
-      headline1: TextStyle(
-      fontFamily: 'Corben',
-      fontWeight: FontWeight.w700,
-      fontSize: 24,
-      color: Colors.black,
-    ),
-  ),
-      ),                         // ... to here.
+          headline1: TextStyle(
+            fontFamily: 'Corben',
+            fontWeight: FontWeight.w700,
+            fontSize: 24,
+            color: Colors.black,
+          ),
+        ),
+      ), // ... to here.
       home: JsonParseDemo(),
     );
   }
   // #enddocregion build
 }
 
-
-
-
-
-
-
- 
 class JsonParseDemo extends StatefulWidget {
   //
   JsonParseDemo() : super();
- 
+
   @override
   _JsonParseDemoState createState() => _JsonParseDemoState();
 }
- 
+
 class _JsonParseDemoState extends State<JsonParseDemo> {
   //
   List<Product> _product;
   bool _loading;
- 
+
   @override
   void initState() {
     super.initState();
@@ -69,15 +62,13 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
       });
     });
   }
- //TODO find day of week to only see items available on day:  
- //DateTime date = DateTime.now();
- //print("weekday is ${date.weekday}");
+  //TODO find day of week to only see items available on day:
+  //DateTime date = DateTime.now();
+  //print("weekday is ${date.weekday}");
 //TODO Add quantiy field of 1 - 6 , default 0 ,to bagel and breads
 
 //TODO Bottom total of item and price.  Tax not included
 
-  
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,44 +77,33 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
       ),
       body: Container(
         color: Colors.white,
-
-
-
-
-
-      
         child: ListView.separated(
-
-            separatorBuilder: (context, index) => Divider(
-            color: Colors.black, thickness: 2,
-            ),
-
-
-
+          separatorBuilder: (context, index) => Divider(
+            color: Colors.black,
+            thickness: 2,
+          ),
           itemCount: null == _product ? 0 : _product.length,
           itemBuilder: (context, index) {
             Product product = _product[index];
             return ListTile(
               title: Text(product.pname,
-               style: TextStyle(
-                  color: Colors.green,
-                  fontSize: 22.0,
-                  fontWeight: FontWeight.w900)),
-
-
-
+                  style: TextStyle(
+                      color: Colors.green,
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.w900)),
 
               subtitle: Text(product.retailp.toStringAsFixed(2),
-                style: TextStyle(
-                  color: Colors.blueAccent,
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.w400)),
+                  style: TextStyle(
+                      color: Colors.blueAccent,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w400)),
 
-             trailing:  Icon(
+              //TODO icon holder for adding quantiy selector for bagels 1-6 dropdown.dart  file called here
+              trailing: Icon(
                 Icons.online_prediction_rounded,
                 color: Colors.blue,
                 size: 36.0,
-                  ),  
+              ),
               
             );
           },
