@@ -97,7 +97,7 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
                       fontWeight: FontWeight.w500)), 
                       // product name
 
-              subtitle: Text('\$ ' + (product.retailp.toStringAsFixed(2)),
+              subtitle: Text('\$ ' + (product.retailp.toStringAsFixed(2) + '  each'),
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 18.0,
