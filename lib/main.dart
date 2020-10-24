@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'Startup Name Generator',
       theme: ThemeData(
         // Add the 3 lines from here...
-        primarySwatch: Colors.yellow,
+        primarySwatch: Colors.blue,
         textTheme: TextTheme(
           headline1: TextStyle(
             fontFamily: 'Corben',
@@ -77,7 +77,7 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_loading ? 'Loading...' : 'Products'),
+        title: Text(_loading ? 'Loading...' : 'Bagels & Breads'),
       ),
       body: Container(
         color: Colors.white,
@@ -92,15 +92,17 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
             return ListTile(
               title: Text(product.pname,
                   style: TextStyle(
-                      color: Colors.green,
+                      color: Colors.blue[900],
                       fontSize: 22.0,
-                      fontWeight: FontWeight.w900)),
+                      fontWeight: FontWeight.w500)), 
+                      // product name
 
-              subtitle: Text(product.retailp.toStringAsFixed(2),
+              subtitle: Text('\$ ' + (product.retailp.toStringAsFixed(2)),
                   style: TextStyle(
-                      color: Colors.blueAccent,
+                      color: Colors.black,
                       fontSize: 18.0,
                       fontWeight: FontWeight.w400)),
+                      //PRICE OF ITEM 
 
               //TODO icon holder for adding quantiy selector for bagels 1-6 dropdown.dart  file called here
              /*  trailing: Icon(
