@@ -86,7 +86,20 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
       ),
       body: Container(
         color: Colors.white,
-        child: ListView.builder(
+
+
+
+
+
+      
+        child: ListView.separated(
+
+            separatorBuilder: (context, index) => Divider(
+            color: Colors.black,
+            ),
+
+
+
           itemCount: null == _product ? 0 : _product.length,
           itemBuilder: (context, index) {
             Product product = _product[index];
