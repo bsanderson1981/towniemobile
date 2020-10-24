@@ -118,6 +118,12 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
                   color: Colors.blueAccent,
                   fontSize: 18.0,
                   fontWeight: FontWeight.w400)),
+
+             trailing:  Icon(
+                Icons.online_prediction_rounded,
+                color: Colors.blue,
+                size: 36.0,
+                  ),  
               
             );
           },
