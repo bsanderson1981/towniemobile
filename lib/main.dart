@@ -88,7 +88,6 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
                   color: Colors.green,
                   fontSize: 22.0,
                   fontWeight: FontWeight.w900)),
-              trailing:  
 
 
 
