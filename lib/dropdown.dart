@@ -49,10 +49,10 @@ class _MyDropStatefulWidgetState extends State<MyDropStatefulWidget> {
       iconSize: 50,
       elevation: 16,
       style: TextStyle(color: Colors.deepPurple),
-      underline: Container(
+      /* underline: Container(
         height: 2,
         color: Colors.deepPurpleAccent,
-      ),
+      ), */
       onChanged: (String newValue) {
         setState(() {
           dropdownValue = newValue;
