@@ -5,6 +5,10 @@
 //TODO Create batch process to generate json file from db nightly or on demain via a button
 //TODO TEST code
 //TODO spining on load bagel icon or sprit - make.
+//TODO total bagels / breads order 
+//TODO shopping card added
+//TODO snackbar menu for as total add up pop up totals
+
 
 import 'package:flutter/material.dart';
 import 'Services.dart';
