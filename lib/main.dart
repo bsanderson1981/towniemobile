@@ -90,6 +90,8 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
           itemBuilder: (context, index) {
             Product product = _product[index];
             return ListTile(
+              leading: Icon(Icons.plus_one),
+             // trailing: Icon(Icons.exposure_minus_1),
               title: Text(product.pname,
                   style: TextStyle(
                       color: Colors.blue[900],
