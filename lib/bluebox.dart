@@ -91,7 +91,12 @@ class GreenBox extends StatelessWidget {
   }
 }
 
-class IconBox extends StatelessWidget {
+class IconBox extends StatefulWidget {
+  @override
+  _IconBoxState createState() => _IconBoxState();
+}
+
+class _IconBoxState extends State<IconBox> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -108,8 +113,14 @@ class IconBox extends StatelessWidget {
   }
 }
 
-class TextBox extends StatelessWidget {
+class TextBox extends StatefulWidget {
+  @override
+  _TextBoxState createState() => _TextBoxState();
+}
+
+class _TextBoxState extends State<TextBox> {
   int _counter = 6;
+
   @override
   Widget build(BuildContext context) {
     return Container(
