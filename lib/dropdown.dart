@@ -67,6 +67,9 @@ class _MyDropStatefulWidgetState extends State<MyDropStatefulWidget> {
           
         );
       }).toList(),
+      //onChanged: (debugPrint('local terminal test')),
+
+     
     );
   }
 }
