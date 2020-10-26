@@ -30,7 +30,7 @@ class MyWidget extends StatelessWidget {
           flex: 1,
           child: RedBox(),
         ),
-        Fglexible(
+        Flexible(
           fit: FlexFit.loose,
           flex: 1,
           child: GreenBox(),
