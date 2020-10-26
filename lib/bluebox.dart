@@ -109,7 +109,7 @@ class IconBox extends StatelessWidget {
 }
 
 class TextBox extends StatelessWidget {
-  int _counter = 0;
+  int _counter = 6;
   @override
   Widget build(BuildContext context) {
     return Container(
