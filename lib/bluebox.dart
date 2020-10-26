@@ -24,6 +24,7 @@ class MyWidget extends StatelessWidget {
     return Row(
       children: [
         BlueBox(),
+        
         Flexible(
           fit: FlexFit.loose,
           flex: 1,
@@ -34,10 +35,18 @@ class MyWidget extends StatelessWidget {
           flex: 1,
           child: GreenBox(),
         ),
+
         Flexible(
           fit: FlexFit.loose,
           flex: 1,
           child: IconBox(),
+        ),
+        
+        
+        Flexible(
+          fit: FlexFit.loose,
+          flex: 1,
+          child: TextBox(),
         ),
       ],
     );
@@ -79,7 +88,7 @@ class GreenBox extends StatelessWidget {
       width: 50,
       height: 50,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.green,
         border: Border.all(),
       ),
     );
@@ -96,9 +105,25 @@ class IconBox extends StatelessWidget {
         width: 50,
         height: 50,
         decoration: BoxDecoration(
-          color: Colors.red,
+          color: Colors.white,
           border: Border.all(),
-        )
+        ),
         );
   }
 }
+
+class TextBox extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        child:Text("0"),
+        width: 50,
+        height: 50,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border.all(),
+        ),
+        );
+  }
+}
+
