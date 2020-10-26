@@ -55,19 +55,7 @@ class BlueBox extends StatelessWidget {
 }
 
 
-class GreenBox extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 50,
-      height: 50,
-      decoration: BoxDecoration(
-        color: Colors.green,
-        border: Border.all(),
-      ),
-    );
-  }
-}
+
 class RedBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -76,6 +64,24 @@ class RedBox extends StatelessWidget {
       height: 50,
       decoration: BoxDecoration(
         color: Colors.red,
+        border: Border.all(),
+      ),
+    );
+  }
+}
+
+class GreenBox extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 50,
+      height: 50,
+
+
+
+      
+      decoration: BoxDecoration(
+        color: Colors.white,
         border: Border.all(),
       ),
     );
