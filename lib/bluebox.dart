@@ -24,7 +24,6 @@ class MyWidget extends StatelessWidget {
     return Row(
       children: [
         BlueBox(),
-        
         Flexible(
           fit: FlexFit.loose,
           flex: 1,
@@ -35,14 +34,11 @@ class MyWidget extends StatelessWidget {
           flex: 1,
           child: GreenBox(),
         ),
-
         Flexible(
           fit: FlexFit.loose,
           flex: 1,
           child: IconBox(),
         ),
-        
-        
         Flexible(
           fit: FlexFit.loose,
           flex: 1,
@@ -99,31 +95,39 @@ class IconBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Icon(
-          Icons.plus_one,
-        ),
-        width: 50,
-        height: 50,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(),
-        ),
-        );
+      child: Icon(
+        Icons.plus_one,
+      ),
+      width: 50,
+      height: 50,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border.all(),
+      ),
+    );
   }
 }
 
 class TextBox extends StatelessWidget {
+  int _counter = 0;
   @override
   Widget build(BuildContext context) {
     return Container(
-        child:Text("0"),
-        width: 50,
-        height: 50,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(),
-        ),
-        );
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text(
+            '$_counter',
+            style: Theme.of(context).textTheme.headline4,
+          ),
+        ],
+      ),
+      width: 50,
+      height: 50,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border.all(),
+      ),
+    );
   }
 }
-
