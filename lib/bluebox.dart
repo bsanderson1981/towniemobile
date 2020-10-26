@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 //hi
@@ -35,6 +34,11 @@ class MyWidget extends StatelessWidget {
           flex: 1,
           child: GreenBox(),
         ),
+        Flexible(
+          fit: FlexFit.loose,
+          flex: 1,
+          child: IconBox(),
+        ),
       ],
     );
   }
@@ -53,8 +57,6 @@ class BlueBox extends StatelessWidget {
     );
   }
 }
-
-
 
 class RedBox extends StatelessWidget {
   @override
@@ -76,14 +78,27 @@ class GreenBox extends StatelessWidget {
     return Container(
       width: 50,
       height: 50,
-
-
-
-      
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(),
       ),
     );
+  }
+}
+
+class IconBox extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        child: Icon(
+          Icons.plus_one,
+        ),
+        width: 50,
+        height: 50,
+        decoration: BoxDecoration(
+          color: Colors.red,
+          border: Border.all(),
+        )
+        );
   }
 }
