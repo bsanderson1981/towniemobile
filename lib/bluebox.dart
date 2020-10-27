@@ -103,7 +103,8 @@ class IconBox extends StatefulWidget {
   @override
   _IconBoxState createState() => _IconBoxState();
 }
-
+//TODO need to get total field to see counter
+//TODO need to get decrement widget icon working: mind <0 code needed 
 class _IconBoxState extends State<StatefulWidget> {
   Widget build(BuildContext context) {
     return Column(
@@ -151,7 +152,8 @@ class _TextBoxState extends State<TextBox> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            '$_counter',
+            
+          '$_counter',
             style: Theme.of(context).textTheme.headline4,
           ),
         ],
