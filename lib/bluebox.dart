@@ -18,7 +18,12 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyWidget extends StatelessWidget {
+class MyWidget extends StatefulWidget {
+  @override
+  _MyWidgetState createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -90,28 +95,71 @@ class GreenBox extends StatelessWidget {
     );
   }
 }
+
+int _counter = 0;
+
 //OnPress Action Button updates counter
 class IconBox extends StatefulWidget {
   @override
   _IconBoxState createState() => _IconBoxState();
 }
 
-class _IconBoxState extends State<IconBox> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Icon(
-        Icons.plus_one,
-      ),
-      width: 50,
-      height: 50,
-      decoration: BoxDecoration(
+class _IconBoxState extends State<StatefulWidget> {
+ 
+ 
+Widget build(BuildContext context) {
+  return Column(
+
+    mainAxisAlignment: MainAxisAlignment.center,
+
+    children: [
+      Material(
+       
         color: Colors.white,
-        border: Border.all(),
+        child: Center(
+          child: Ink(
+            decoration: const ShapeDecoration(
+              color: Colors.lightBlue,
+              shape: CircleBorder(),
+            ),
+            child: IconButton(
+              icon: Icon(Icons.plus_one),
+              color: Colors.white,
+              iconSize: 25,
+              onPressed: () {},
+            ),
+          ),
+        ),
       ),
-    );
-  }
+    ],
+  );
 }
+
+}
+ 
+ 
+ 
+ 
+ 
+ 
+  /* Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        IconButton(
+          icon: Icon(Icons.plus_one),
+          
+          onPressed: () {
+            setState(() {
+              _counter += 1;
+            });
+          },
+        ),
+       
+      ],
+    );
+  } */
+
 
 class TextBox extends StatefulWidget {
   @override
