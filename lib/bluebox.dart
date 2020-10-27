@@ -105,61 +105,36 @@ class IconBox extends StatefulWidget {
 }
 
 class _IconBoxState extends State<StatefulWidget> {
- 
- 
-Widget build(BuildContext context) {
-  return Column(
-
-    mainAxisAlignment: MainAxisAlignment.center,
-
-    children: [
-      Material(
-       
-        color: Colors.white,
-        child: Center(
-          child: Ink(
-            decoration: const ShapeDecoration(
-              color: Colors.lightBlue,
-              shape: CircleBorder(),
-            ),
-            child: IconButton(
-              icon: Icon(Icons.plus_one),
-              color: Colors.white,
-              iconSize: 25,
-              onPressed: () {},
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Material(
+          color: Colors.white,
+          child: Center(
+            child: Ink(
+              decoration: const ShapeDecoration(
+                color: Colors.lightBlue,
+                shape: CircleBorder(),
+              ),
+              child: IconButton(
+                icon: Icon(Icons.plus_one),
+                color: Colors.white,
+                iconSize: 25,
+                onPressed: () {
+                  setState(() {
+                    _counter += 10;
+                    print('this is counter + $_counter');
+                  });
+                },
+              ),
             ),
           ),
         ),
-      ),
-    ],
-  );
-}
-
-}
- 
- 
- 
- 
- 
- 
-  /* Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        IconButton(
-          icon: Icon(Icons.plus_one),
-          
-          onPressed: () {
-            setState(() {
-              _counter += 1;
-            });
-          },
-        ),
-       
       ],
     );
-  } */
-
+  }
+}
 
 class TextBox extends StatefulWidget {
   @override
@@ -167,7 +142,7 @@ class TextBox extends StatefulWidget {
 }
 
 class _TextBoxState extends State<TextBox> {
-  int _counter = 6;
+  // int _counter = 6;
 
   @override
   Widget build(BuildContext context) {
