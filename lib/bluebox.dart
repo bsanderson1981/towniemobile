@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-//hi
+//TODO put in code to not let ( - )  decrease below zero in decrement
+//TODO format text counter to be same size as +1 - 
 
 void main() => runApp(MyApp());
 
@@ -44,7 +45,7 @@ class _MyWidgetState extends State<MyWidget> {
       child:Row(
       children: [
         IconButton(
-          icon: Icon(Icons.plus_one),
+          icon: Icon(Icons.add_circle),
           color: Colors.black,
           iconSize: 25,
           onPressed: _incrementCounter,
