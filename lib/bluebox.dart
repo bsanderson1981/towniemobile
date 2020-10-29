@@ -37,7 +37,13 @@ class _MyWidgetState extends State<MyWidget> {
 
   void _decrementCounter() {
     setState(() {
-      _counter--;
+
+      if (_counter ==0) { 
+      
+   } else { 
+       _counter--;
+   } 
+      
     });
   }
 
@@ -63,7 +69,7 @@ class _MyWidgetState extends State<MyWidget> {
            ),
 
 
-           
+
       IconButton(
           icon: Icon(Icons.remove_circle),
           color: Colors.black,
