@@ -125,11 +125,11 @@ class _IconBoxState extends State<StatefulWidget> {
                 iconSize: 25,
                 onPressed: () {
                   setState(() {
-                    
                     _counter += 10;
                     print('this is counter + $_counter');
                     //new TextBox(); not working....
                   });
+                  child: TextBox();
                 },
               ),
             ),
