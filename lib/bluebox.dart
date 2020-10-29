@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 //TODO put in code to not let ( - )  decrease below zero in decrement
 //TODO format text counter to be same size as +1 - 
+//TODO how to i track counts for 13 types of bagels and breads in window
+//TODO  in SnackBar menu: need bagel count to show bakers dozen   1 bdoz + 7 bagels total
 
 void main() => runApp(MyApp());
 
@@ -59,6 +61,9 @@ class _MyWidgetState extends State<MyWidget> {
             style: Theme.of(context).textTheme.headline4,
            
            ),
+
+
+           
       IconButton(
           icon: Icon(Icons.remove_circle),
           color: Colors.black,
