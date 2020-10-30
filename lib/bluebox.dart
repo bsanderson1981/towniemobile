@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-
-//TODO format text counter to be same size as +1 - 
+//TODO format text counter to be same size as +1 -
 //TODO how to i track counts for 13 types of bagels and breads in window
 //TODO  in SnackBar menu: need bagel count to show bakers dozen   1 bdoz + 7 bagels total
 
@@ -29,68 +28,60 @@ class MyWidget extends StatefulWidget {
 class _MyWidgetState extends State<MyWidget> {
   int _counter = 0;
 
+  int _bakerdoz = 0;
+
+  //int _totalbagels = 0;
+
   void _incrementCounter() {
     setState(() {
-      _counter++;
+      //track baker doz
+      if (_counter == 13) {
+        _bakerdoz++;
+        _counter = 0;
+      } else {
+        _counter++;
+      }
     });
   }
 
   void _decrementCounter() {
     setState(() {
-
-      if (_counter ==0) { 
-      
-   } else { 
-       _counter--;
-   } 
-      
+      // check if zero do not go into -1
+      if (_counter == 0) {
+      } else {
+        
+        _counter--;
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      child:Row(
-      children: [
-        IconButton(
-          icon: Icon(Icons.add_circle),
-          color: Colors.black,
-          iconSize: 25,
-          onPressed: _incrementCounter,
-        ),
-       
-     
-      
-     
-        Text(
+      child: Row(
+        children: [
+          IconButton(
+            icon: Icon(Icons.add_circle),
+            color: Colors.black,
+            iconSize: 25,
+            onPressed: _incrementCounter,
+          ),
+          Text(
             '$_counter',
             style: Theme.of(context).textTheme.headline4,
-           
-           ),
-
-
-
-      IconButton(
-          icon: Icon(Icons.remove_circle),
-          color: Colors.black,
-          iconSize: 25,
-          onPressed: _decrementCounter,
-        ),
-     
+          ),
+          IconButton(
+            icon: Icon(Icons.remove_circle),
+            color: Colors.black,
+            iconSize: 25,
+            onPressed: _decrementCounter,
+          ),
+          Text(
+            'Bakers Doz:  $_bakerdoz',
+            style: Theme.of(context).textTheme.headline4,
+          ),
         ],
-     
       ),
-
-
-     
-     
     );
-
-
-
-
-    
-  
   }
 }
-
