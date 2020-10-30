@@ -36,30 +36,21 @@ class _MyWidgetState extends State<MyWidget> {
   void _incrementCounter() {
     setState(() {
       //track baker doz
-      if (_ecounter > 12 ) {
-        _bakerdoz++;
+      
         _totalbagels++;
-        _ecounter = 1;
-      } else {
-        _ecounter++;
-        _totalbagels++;
-      }
-    });
+        _bakerdoz = (_totalbagels ~/ 13);
+        _ecounter = (_totalbagels % 13);
+      });
   }
+
+
 
   void _decrementCounter() {
     setState(() {
       // check if zero do not go into -1
-      if (_bakerdoz != 0) {
-        _bakerdoz--;
-        _totalbagels--;
-        _ecounter = _ecounter + 12;
-
-      
-      } else {
-        _ecounter--;
-        _totalbagels--;
-      }
+      _totalbagels--;
+        _bakerdoz = (_totalbagels ~/ 13);
+        _ecounter = (_totalbagels % 13);
     });
   }
 
