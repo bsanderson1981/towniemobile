@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 //TODO format text counter to be same size as +1 -
+//TODO Block all tuesdays from pickup dates
 //TODO how to i track counts for 13 types of bagels and breads in window
 //TODO  in SnackBar menu: need bagel count to show bakers dozen   1 bdoz + 7 bagels total
 
@@ -26,7 +27,7 @@ class MyWidget extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<MyWidget> {
-  int _counter = 0;
+  int _ecounter = 0;
 
   int _bakerdoz = 0;
 
@@ -35,12 +36,12 @@ class _MyWidgetState extends State<MyWidget> {
   void _incrementCounter() {
     setState(() {
       //track baker doz
-      if (_counter == 13) {
+      if (_ecounter > 12 ) {
         _bakerdoz++;
         _totalbagels++;
-        _counter = 0;
+        _ecounter = 1;
       } else {
-        _counter++;
+        _ecounter++;
         _totalbagels++;
       }
     });
@@ -49,10 +50,14 @@ class _MyWidgetState extends State<MyWidget> {
   void _decrementCounter() {
     setState(() {
       // check if zero do not go into -1
-      if (_counter == 0) {
-      } else {
-        _counter--;
+      if (_bakerdoz != 0) {
         _bakerdoz--;
+        _totalbagels--;
+        _ecounter = _ecounter + 12;
+
+      
+      } else {
+        _ecounter--;
         _totalbagels--;
       }
     });
@@ -70,7 +75,7 @@ class _MyWidgetState extends State<MyWidget> {
             onPressed: _incrementCounter,
           ),
           Text(
-            '$_counter',
+            '$_ecounter',
             style: Theme.of(context).textTheme.headline4,
           ),
           IconButton(
@@ -86,7 +91,7 @@ class _MyWidgetState extends State<MyWidget> {
                 style: Theme.of(context).textTheme.headline4,
               ),
               Text(
-                'TB=:  $_totalbagels',
+                ' TB=:  $_totalbagels',
                 style: Theme.of(context).textTheme.headline4,
               ),
             ],
