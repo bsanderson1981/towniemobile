@@ -35,7 +35,10 @@ class _MyWidgetState extends State<MyWidget> {
 
   void _incrementCounter() {
     setState(() {
-      //track baker doz
+      //track increament   ~/ finds just total bager doz of 13
+      // %  check total for multiple of 13 and return single 
+      // non bakers doz totals back
+      // TB = 16     BDz = 1   and Bagels = 3 for example...
       
         _totalbagels++;
         _bakerdoz = (_totalbagels ~/ 13);
@@ -78,11 +81,11 @@ class _MyWidgetState extends State<MyWidget> {
           Row(
             children: [
               Text(
-                'BDz:  $_bakerdoz',
+                'BDz:$_bakerdoz',
                 style: Theme.of(context).textTheme.headline4,
               ),
               Text(
-                ' TB=:  $_totalbagels',
+                ' TB=:$_totalbagels',
                 style: Theme.of(context).textTheme.headline4,
               ),
             ],
