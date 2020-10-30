@@ -30,16 +30,18 @@ class _MyWidgetState extends State<MyWidget> {
 
   int _bakerdoz = 0;
 
-  //int _totalbagels = 0;
+  int _totalbagels = 0;
 
   void _incrementCounter() {
     setState(() {
       //track baker doz
       if (_counter == 13) {
         _bakerdoz++;
+        _totalbagels++;
         _counter = 0;
       } else {
         _counter++;
+        _totalbagels++;
       }
     });
   }
@@ -49,8 +51,9 @@ class _MyWidgetState extends State<MyWidget> {
       // check if zero do not go into -1
       if (_counter == 0) {
       } else {
-        
         _counter--;
+        _bakerdoz--;
+        _totalbagels--;
       }
     });
   }
@@ -76,9 +79,17 @@ class _MyWidgetState extends State<MyWidget> {
             iconSize: 25,
             onPressed: _decrementCounter,
           ),
-          Text(
-            'Bakers Doz:  $_bakerdoz',
-            style: Theme.of(context).textTheme.headline4,
+          Row(
+            children: [
+              Text(
+                'BDz:  $_bakerdoz',
+                style: Theme.of(context).textTheme.headline4,
+              ),
+              Text(
+                'TB=:  $_totalbagels',
+                style: Theme.of(context).textTheme.headline4,
+              ),
+            ],
           ),
         ],
       ),
