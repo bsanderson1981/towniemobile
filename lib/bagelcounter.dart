@@ -48,8 +48,11 @@ class _MyWidgetState extends State<MyWidget> {
 
   void _decrementCounter() {
     setState(() {
-      // check if zero do not go into -1
+      
       if (_totalbagels == 0) {
+
+          // check if zero do not go into -1
+
       } else {
         _totalbagels--;
         _bakerdoz = (_totalbagels ~/ 13);
