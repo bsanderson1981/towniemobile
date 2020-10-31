@@ -16,17 +16,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyWidget(),
+      home: CounterWidget(),
     );
   }
 }
 
-class MyWidget extends StatefulWidget {
+class CounterWidget extends StatefulWidget {
   @override
-  _MyWidgetState createState() => _MyWidgetState();
+  _CounterWidgetState createState() => _CounterWidgetState();
 }
 
-class _MyWidgetState extends State<MyWidget> {
+class _CounterWidgetState extends State<CounterWidget> {
   int _ecounter = 0;
 
   int _bakerdoz = 0;
@@ -82,7 +82,7 @@ class _MyWidgetState extends State<MyWidget> {
             iconSize: 25,
             onPressed: _decrementCounter,
           ),
-          Row(
+          /* Row(
             children: [
               Text(
                 'BDz:$_bakerdoz',
@@ -93,7 +93,7 @@ class _MyWidgetState extends State<MyWidget> {
                 style: Theme.of(context).textTheme.headline4,
               ),
             ],
-          ),
+          ), */
         ],
       ),
     );

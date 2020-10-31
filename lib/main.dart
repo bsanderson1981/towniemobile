@@ -13,7 +13,7 @@
 import 'package:flutter/material.dart';
 import 'Services.dart';
 import 'Product.dart';
-import 'dropdown.dart';
+import 'bagelcounter.dart';
 
 void main() => runApp(MyApp());
 
@@ -90,7 +90,7 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
           itemBuilder: (context, index) {
             Product product = _product[index];
             return ListTile(
-              leading: Icon(Icons.plus_one),
+             // leading: Icon(Icons.plus_one),
              // trailing: Icon(Icons.exposure_minus_1),
               title: Text(product.pname,
                   style: TextStyle(
@@ -113,7 +113,7 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
                 size: 36.0,
               ), */
 
-               trailing: MyDropStatefulWidget(),
+               trailing: SizedBox(width: 150, child: CounterWidget()), 
               
               
             );
