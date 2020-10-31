@@ -36,24 +36,25 @@ class _MyWidgetState extends State<MyWidget> {
   void _incrementCounter() {
     setState(() {
       //track increament   ~/ finds just total bager doz of 13
-      // %  check total for multiple of 13 and return single 
+      // %  check total for multiple of 13 and return single
       // non bakers doz totals back
       // TB = 16     BDz = 1   and Bagels = 3 for example...
-      
-        _totalbagels++;
-        _bakerdoz = (_totalbagels ~/ 13);
-        _ecounter = (_totalbagels % 13);
-      });
+
+      _totalbagels++;
+      _bakerdoz = (_totalbagels ~/ 13);
+      _ecounter = (_totalbagels % 13);
+    });
   }
-
-
 
   void _decrementCounter() {
     setState(() {
       // check if zero do not go into -1
-      _totalbagels--;
+      if (_totalbagels == 0) {
+      } else {
+        _totalbagels--;
         _bakerdoz = (_totalbagels ~/ 13);
         _ecounter = (_totalbagels % 13);
+      }
     });
   }
 
