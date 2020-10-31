@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//TODO format text counter to be same size as +1 -
+//FIXME  fix scroll deletes counts entered
 //TODO Block all tuesdays from pickup dates
 //TODO how to i track counts for 13 types of bagels and breads in window
 //TODO  in SnackBar menu: need bagel count to show bakers dozen   1 bdoz + 7 bagels total
