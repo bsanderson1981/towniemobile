@@ -64,6 +64,7 @@ class _CounterWidgetState extends State<CounterWidget> {
   @override
   Widget build(BuildContext context) {
     return Material(
+      c
       child: Row(
         children: [
           IconButton(
@@ -73,7 +74,7 @@ class _CounterWidgetState extends State<CounterWidget> {
             onPressed: _incrementCounter,
           ),
           Text(
-            '$_ecounter',
+            '$_totalbagels',
             style: Theme.of(context).textTheme.headline4,
           ),
           IconButton(
