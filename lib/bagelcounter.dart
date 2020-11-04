@@ -26,12 +26,19 @@ class CounterWidget extends StatefulWidget {
   _CounterWidgetState createState() => _CounterWidgetState();
 }
 
-class _CounterWidgetState extends State<CounterWidget> {
+class _CounterWidgetState extends State<CounterWidget>  with AutomaticKeepAliveClientMixin{
+
+//added mixin to allow scroll keep item count
+
   int _ecounter = 0;
 
   int _bakerdoz = 0;
 
   int _totalbagels = 0;
+
+  @override
+  bool get wantKeepAlive => true; //needed for above mix in to work
+
 
   void _incrementCounter() {
     setState(() {
