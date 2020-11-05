@@ -26,7 +26,16 @@ class CounterWidget extends StatefulWidget {
   _CounterWidgetState createState() => _CounterWidgetState();
 }
 
-class _CounterWidgetState extends State<CounterWidget>  with AutomaticKeepAliveClientMixin{
+class _CounterWidgetState extends State<CounterWidget>
+    with AutomaticKeepAliveClientMixin {
+//start snackbar
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
+  void _showScaffold(String message) {
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text(message),
+    ));
+  }
 
 //added mixin to allow scroll keep item count
 
@@ -39,7 +48,6 @@ class _CounterWidgetState extends State<CounterWidget>  with AutomaticKeepAliveC
   @override
   bool get wantKeepAlive => true; //needed for above mix in to work
 
-
   void _incrementCounter() {
     setState(() {
       //track increament   ~/ finds just total bager doz of 13
@@ -50,20 +58,28 @@ class _CounterWidgetState extends State<CounterWidget>  with AutomaticKeepAliveC
       _totalbagels++;
       _bakerdoz = (_totalbagels ~/ 13);
       _ecounter = (_totalbagels % 13);
+
+      if (_bakerdoz > 0) {
+        Scaffold.of(context).showSnackBar(SnackBar(
+          content: Text("$_bakerdoz Total."),
+        ));
+      }
     });
   }
 
   void _decrementCounter() {
     setState(() {
-      
       if (_totalbagels == 0) {
-
-          // check if zero do not go into -1
+        // check if zero do not go into -1
 
       } else {
         _totalbagels--;
         _bakerdoz = (_totalbagels ~/ 13);
         _ecounter = (_totalbagels % 13);
+
+        Scaffold.of(context).showSnackBar(SnackBar(
+          content: Text("This is - SnackBar."),
+        ));
       }
     });
   }
@@ -71,7 +87,7 @@ class _CounterWidgetState extends State<CounterWidget>  with AutomaticKeepAliveC
   @override
   Widget build(BuildContext context) {
     return Material(
-      
+      key: _scaffoldKey,
       child: Row(
         children: [
           IconButton(
