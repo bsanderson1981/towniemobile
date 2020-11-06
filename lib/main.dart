@@ -5,10 +5,9 @@
 //TODO Create batch process to generate json file from db nightly or on demain via a button
 //TODO TEST code
 //TODO spining on load bagel icon or sprit - make.
-//TODO total bagels / breads order 
+//TODO total bagels / breads order
 //TODO shopping card added
 //TODO snackbar menu for as total add up pop up totals
-
 
 import 'package:flutter/material.dart';
 import 'Services.dart';
@@ -82,7 +81,6 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
       body: Container(
         color: Colors.white,
         child: ListView.separated(
-          
           separatorBuilder: (context, index) => Divider(
             color: Colors.black,
             thickness: 2,
@@ -91,36 +89,57 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
           itemBuilder: (context, index) {
             Product product = _product[index];
             return ListTile(
-             // leading: Icon(Icons.plus_one),
-             // trailing: Icon(Icons.exposure_minus_1),
+              // leading: Icon(Icons.plus_one),
+              // trailing: Icon(Icons.exposure_minus_1),
               title: Text(product.pname,
                   style: TextStyle(
                       color: Colors.blue[900],
                       fontSize: 22.0,
-                      fontWeight: FontWeight.w500)), 
-                      // product name
+                      fontWeight: FontWeight.w500)),
+              // product name
 
-              subtitle: Text('\$ ' + (product.retailp.toStringAsFixed(2) + '  each'),
+              subtitle: Text(
+                  '\$ ' + (product.retailp.toStringAsFixed(2) + '  each'),
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 18.0,
                       fontWeight: FontWeight.w400)),
-                      //PRICE OF ITEM 
+              //PRICE OF ITEM
 
               //TODO icon holder for adding quantiy selector for bagels 1-6 dropdown.dart  file called here
-             /*  trailing: Icon(
+              /*  trailing: Icon(
                 Icons.online_prediction_rounded,
                 color: Colors.blue,
                 size: 36.0,
               ), */
 
-               trailing: SizedBox(width: 150, child: CounterWidget()), 
-              
-              
+              trailing: SizedBox(width: 150, child: CounterWidget()),
             );
           },
         ),
       ),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          
+          children: [
+            //IconButton(icon: Icon(Icons.menu), onPressed: () {}),
+            Spacer(),
+            Container(height: 55.0,width: 1.0,),
+            Text("_totalbagels"),
+            Spacer(),
+            //IconButton(icon: Icon(Icons.search), onPressed: () {}),
+            //IconButton(icon: Icon(Icons.more_vert), onPressed: () {}),
+          ],
+        ),
+     
+      shape: CircularNotchedRectangle(),
+      color: Colors.lightBlue,
+      notchMargin: 8.0,
+     
+      ),
+      //floatingActionButton:
+      //    FloatingActionButton(child: Icon(Icons.add), onPressed: () {}),
+      //floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
