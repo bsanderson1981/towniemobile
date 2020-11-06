@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 //TODO how to i track counts for 13 types of bagels and breads in window
 //TODO  in SnackBar menu: need bagel count to show bakers dozen   1 bdoz + 7 bagels total
 
-void main() => runApp(MyApp());
+/* void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
+ */
 class CounterWidget extends StatefulWidget {
   @override
   _CounterWidgetState createState() => _CounterWidgetState();
@@ -32,7 +32,7 @@ class _CounterWidgetState extends State<CounterWidget>  with AutomaticKeepAliveC
 
   int _ecounter = 0;
 
-  int _bakerdoz = 0;
+  int bakerdoz = 0;
 
   int _totalbagels = 0;
 
@@ -48,8 +48,9 @@ class _CounterWidgetState extends State<CounterWidget>  with AutomaticKeepAliveC
       // TB = 16     BDz = 1   and Bagels = 3 for example...
 
       _totalbagels++;
-      _bakerdoz = (_totalbagels ~/ 13);
+      bakerdoz = (_totalbagels ~/ 13);
       _ecounter = (_totalbagels % 13);
+    
     });
   }
 
@@ -62,7 +63,7 @@ class _CounterWidgetState extends State<CounterWidget>  with AutomaticKeepAliveC
 
       } else {
         _totalbagels--;
-        _bakerdoz = (_totalbagels ~/ 13);
+        bakerdoz = (_totalbagels ~/ 13);
         _ecounter = (_totalbagels % 13);
       }
     });

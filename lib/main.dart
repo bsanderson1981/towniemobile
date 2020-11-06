@@ -54,6 +54,11 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
   List<Product> _product;
   bool _loading;
 
+//quick fix make this getter
+
+  int mbakerdoz = 0;
+  get bakerdoz => mbakerdoz;
+
   @override
   void initState() {
     super.initState();
@@ -120,22 +125,29 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
       ),
       bottomNavigationBar: BottomAppBar(
         child: Row(
-          
           children: [
             //IconButton(icon: Icon(Icons.menu), onPressed: () {}),
             Spacer(),
-            Container(height: 55.0,width: 1.0,),
-            Text("_totalbagels"),
+            Container(
+              height: 55.0,
+              width: 1.0,
+            ),
+            //TODO get bakerdoz and etotal on footer working need to pass data between main and bagelcounter 
+            
+            Text("Baker's Dozen: $mbakerdoz ",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.w500)),
+
             Spacer(),
             //IconButton(icon: Icon(Icons.search), onPressed: () {}),
             //IconButton(icon: Icon(Icons.more_vert), onPressed: () {}),
           ],
         ),
-     
-      shape: CircularNotchedRectangle(),
-      color: Colors.lightBlue,
-      notchMargin: 8.0,
-     
+        shape: CircularNotchedRectangle(),
+        color: Colors.lightBlue,
+        notchMargin: 8.0,
       ),
       //floatingActionButton:
       //    FloatingActionButton(child: Icon(Icons.add), onPressed: () {}),
