@@ -106,8 +106,12 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
               // product name
 
               subtitle: Text(
+<<<<<<< HEAD
                   '\$ ' + (product.retailp.toStringAsFixed(2)
                    + '  each   pid: ' + (product.pid.toString())),
+=======
+                  '\$ ' + (product.retailp.toStringAsFixed(2) + '  each   index:' +'$index'),
+>>>>>>>  added index trackinger for listview
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 18.0,
