@@ -19,20 +19,21 @@ abstract class CounterCubitState extends Equatable {
 
 class CounterCubitInitial extends CounterCubitState {
   const CounterCubitInitial({int dozcount, int singcount, int totalbagels})
-      : super(dozcount: dozcount, singcount: singcount, totalbagels: totalbagels);
+      : super(
+            dozcount: dozcount, singcount: singcount, totalbagels: totalbagels);
 }
 
 class CounterCubitIncreased extends CounterCubitState {
   const CounterCubitIncreased({int dozcount, int singcount, int totalbagels})
-      : super(dozcount: dozcount, singcount: singcount, totalbagels: totalbagels);
+      : super(
+            dozcount: dozcount, singcount: singcount, totalbagels: totalbagels);
 }
 
 class CounterCubitDecreased extends CounterCubitState {
   const CounterCubitDecreased({int dozcount, int singcount, int totalbagels})
-      : super(dozcount: dozcount, singcount: singcount, totalbagels: totalbagels);
+      : super(
+            dozcount: dozcount, singcount: singcount, totalbagels: totalbagels);
 }
-
-
 
 // Without Equitable tests will fail
 // @immutable

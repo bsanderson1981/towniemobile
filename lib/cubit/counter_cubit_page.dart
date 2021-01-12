@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:state_management_example/bloc/cubit/counter/counter_cubit.dart';
-import 'package:state_management_example/bloc/cubit/counter/counter_state.dart';
-
+import 'counter_cubit.dart';
+import 'counter_state.dart';
 class CounterCubitPage extends StatelessWidget {
   static const String routeName = '/counter_cubit';
 

@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:state_management_example/bloc/cubit/counter/counter_state.dart';
+import 'counter_state.dart';
 
 class CounterCubit extends Cubit<CounterCubitState> {
   CounterCubit()
