@@ -59,6 +59,8 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
   int mbakerdoz = 0;
   //get bakerdoz => mbakerdoz;
 
+  int singles = 10;
+
   @override
   void initState() {
     super.initState();
@@ -135,10 +137,10 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
             ),
             //TODO get bakerdoz and etotal on footer working need to pass data between main and bagelcounter
 
-            Text("Baker's Dozen: $mbakerdoz ",
+            Text("Baker's Dozen: $mbakerdoz " + "    Singles:  $singles",
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 25.0,
+                    fontSize: 20.0,
                     fontWeight: FontWeight.w500)),
 
             Spacer(),
