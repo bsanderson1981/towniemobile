@@ -57,7 +57,7 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
 //quick fix make this getter
 
   int mbakerdoz = 0;
-  get bakerdoz => mbakerdoz;
+  //get bakerdoz => mbakerdoz;
 
   @override
   void initState() {
@@ -93,7 +93,7 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
           itemCount: null == _product ? 0 : _product.length,
           itemBuilder: (context, index) {
             Product product = _product[index];
-            return ListTile(
+            return ListTile(isThreeLine: true,
               // leading: Icon(Icons.plus_one),
               // trailing: Icon(Icons.exposure_minus_1),
               title: Text(product.pname,
@@ -104,7 +104,8 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
               // product name
 
               subtitle: Text(
-                  '\$ ' + (product.retailp.toStringAsFixed(2) + '  each'),
+                  '\$ ' + (product.retailp.toStringAsFixed(2)
+                   + '  each   pid: ' + (product.pid.toString())),
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 18.0,
@@ -132,8 +133,8 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
               height: 55.0,
               width: 1.0,
             ),
-            //TODO get bakerdoz and etotal on footer working need to pass data between main and bagelcounter 
-            
+            //TODO get bakerdoz and etotal on footer working need to pass data between main and bagelcounter
+
             Text("Baker's Dozen: $mbakerdoz ",
                 style: TextStyle(
                     color: Colors.white,
