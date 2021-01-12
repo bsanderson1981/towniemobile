@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'main.dart';
 
 //FIXME  fix scroll deletes counts entered
 //TODO Block all tuesdays from pickup dates
@@ -26,8 +27,8 @@ class CounterWidget extends StatefulWidget {
   _CounterWidgetState createState() => _CounterWidgetState();
 }
 
-class _CounterWidgetState extends State<CounterWidget>  with AutomaticKeepAliveClientMixin{
-
+class _CounterWidgetState extends State<CounterWidget>
+    with AutomaticKeepAliveClientMixin {
 //added mixin to allow scroll keep item count
 
   int _ecounter = 0;
@@ -36,9 +37,10 @@ class _CounterWidgetState extends State<CounterWidget>  with AutomaticKeepAliveC
 
   int _totalbagels = 0;
 
+  int mbakerdoz = 0;
+
   @override
   bool get wantKeepAlive => true; //needed for above mix in to work
-
 
   void _incrementCounter() {
     setState(() {
@@ -50,16 +52,14 @@ class _CounterWidgetState extends State<CounterWidget>  with AutomaticKeepAliveC
       _totalbagels++;
       bakerdoz = (_totalbagels ~/ 13);
       _ecounter = (_totalbagels % 13);
-    
+      mbakerdoz = bakerdoz;
     });
   }
 
   void _decrementCounter() {
     setState(() {
-      
       if (_totalbagels == 0) {
-
-          // check if zero do not go into -1
+        // check if zero do not go into -1
 
       } else {
         _totalbagels--;
@@ -72,7 +72,6 @@ class _CounterWidgetState extends State<CounterWidget>  with AutomaticKeepAliveC
   @override
   Widget build(BuildContext context) {
     return Material(
-      
       child: Row(
         children: [
           IconButton(

@@ -1,0 +1,20 @@
+[
+	{
+		"pid": 1,
+		"catid": 1,
+		"pname": "Plain",
+		"ts": null,
+		"sliceable": "Yes",
+		"vegan": "Yes",
+		"active": "Yes",
+		"dowsun": "Y",
+		"dowmon": "Y",
+		"dowtue": "N",
+		"dowwed": "Y",
+		"dowthu": "Y",
+		"dowfri": "Y",
+		"dowsat": "Y",
+		"retailp": 1.50,
+		"activemobile": "Y"
+	}
+]
